@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>portfolio_fujitani.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ゲームプログラマー-ポートフォリオシステムuiai基盤">ゲームプログラマー ポートフォリオ（システム・UI・AI基盤）</h1>
+<hr>
+<h2 id="自己紹介">自己紹介</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>氏名</strong></td>
+<td style="text-align:left">藤谷 尊哉</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>学校</strong></td>
+<td style="text-align:left">河原電子ビジネス専門学校</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>学科</strong></td>
+<td style="text-align:left">ゲームクリエイター科</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>メール</strong></td>
+<td style="text-align:left">ca01254018@st.kawahara.ac.jp</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>長所</strong></td>
+<td style="text-align:left">・<strong>正確かつ丁寧な作業:</strong> 見落としがちな細部まで気を配り、不具合の少ない確実な成果物を制作します。<br>・<strong>粘り強い探究心:</strong> トラブル時も焦らず冷静に原因を分析し、根本的な解決に至るまで粘り強く取り組みます。</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>趣味</strong></td>
+<td style="text-align:left">・<strong>ゲーム:</strong> 『原神』『スプラトゥーン』など。最近は『キングダム ハーツ』にハマっています。<br>・<strong>音楽鑑賞・カラオケ:</strong> 米津玄師さんの楽曲が好きで、カラオケでもよく歌います。<br>・<strong>吹奏楽:</strong> 元吹奏楽部（トロンボーン担当）。演奏できていませんが、いつか演奏も再開したいです。<br>・<strong>映画鑑賞:</strong> アニメ作品が多いですが、サスペンスやドラマ映画なども幅広く観ます。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="目次">目次</h2>
+<ul>
+<li><a href="#%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B">自己紹介</a></li>
+<li><a href="#%E4%BD%9C%E5%93%81%E6%A6%82%E8%A6%81">作品概要</a></li>
+<li><a href="#%E6%8B%85%E5%BD%93%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">担当ソースコード</a></li>
+<li><a href="#%E6%8A%80%E8%A1%93%E7%B4%B9%E4%BB%8B">技術紹介</a>
+<ul>
+<li><a href="#%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83%E3%82%92%E6%A5%B5%E9%99%90%E3%81%BE%E3%81%A7%E9%AB%98%E3%82%81%E3%82%8B%E3%83%9B%E3%83%83%E3%83%88%E3%83%AA%E3%83%AD%E3%83%BC%E3%83%89%E5%9F%BA%E7%9B%A4">開発環境を極限まで高める「ホットリロード基盤」</a></li>
+<li><a href="#mvc%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8Fui%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0">MVCアーキテクチャに基づく「UIシステム」</a></li>
+<li><a href="#%E6%8B%A1%E5%BC%B5%E6%80%A7%E3%81%A8%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E3%82%92%E4%B8%A1%E7%AB%8B%E3%81%97%E3%81%9F%E3%82%B9%E3%83%86%E3%83%BC%E3%83%88%E3%83%9E%E3%82%B7%E3%83%B3">拡張性とパフォーマンスを両立した「ステートマシン」</a></li>
+<li><a href="#3d%E6%95%B0%E5%AD%A6%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E7%89%A9%E7%90%86%E6%8C%99%E5%8B%95%E3%81%A8%E5%9C%B0%E5%BD%A2%E8%BF%BD%E5%BE%93%E5%88%B6%E5%BE%A1">3D数学を用いた「物理挙動と地形追従制御」</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7100%E7%BE%BD%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B%E5%90%8C%E5%BF%83%E5%86%86%E9%99%A3%E5%BD%A2%E3%81%A8%E3%82%BD%E3%83%BC%E3%83%88%E5%87%A6%E7%90%86">最大100羽を制御する「同心円陣形とソート処理」</a></li>
+<li><a href="#ai%E3%81%AE%E6%8C%AF%E5%8B%95%E3%82%92%E9%98%B2%E3%81%90%E3%83%92%E3%82%B9%E3%83%86%E3%83%AA%E3%82%B7%E3%82%B9%E7%A7%BB%E5%8B%95%E5%88%B6%E5%BE%A1">AIの振動を防ぐ「ヒステリシス移動制御」</a></li>
+<li><a href="#%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%92%E4%BB%8B%E3%81%97%E3%81%9F%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%81%AE%E3%82%AA%E3%83%BC%E3%82%B1%E3%82%B9%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3">マネージャーを介した「イベントのオーケストレーション」</a></li>
+<li><a href="#3d%E6%95%B0%E5%AD%A6%E3%82%92%E7%94%A8%E3%81%84%E3%81%9F%E3%82%AB%E3%83%A1%E3%83%A9%E3%83%AF%E3%83%BC%E3%82%AF%E3%81%A8%E3%83%96%E3%83%AC%E3%83%B3%E3%83%89%E5%88%B6%E5%BE%A1">3D数学を用いた「カメラワークとブレンド制御」</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="作品概要">作品概要</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目</th>
+<th style="text-align:left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>タイトル</strong></td>
+<td style="text-align:left">ぺんたくと</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>制作人数</strong></td>
+<td style="text-align:left">4人</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>製作期間</strong></td>
+<td style="text-align:left">2025年4月～現在</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>ゲームジャンル</strong></td>
+<td style="text-align:left">3Dアクション</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>プレイ人数</strong></td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>対応ハード</strong></td>
+<td style="text-align:left">PC (Windows 11) / Xbox コントローラー</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>使用言語</strong></td>
+<td style="text-align:left">C++</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>エンジン</strong></td>
+<td style="text-align:left">BeastEngine（学校内製エンジン（k2EngineLow） / DirectX12）</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>使用ツール</strong></td>
+<td style="text-align:left">Visual Studio 2026<br>Visual Studio Code<br>Adobe Photoshop 2026<br>3dsMax 2026<br>Effekseer<br>GitHub<br>Fork</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>GitHub URL</strong></td>
+<td style="text-align:left">https://github.com/TakebayashiNaoya/ProjectBeast</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Youtube URL</strong></td>
+<td style="text-align:left">https://youtu.be/daK2kwv6Td4</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="担当ソースコード">担当ソースコード</h2>
+<details>
+<summary>📂 Actor （クリックで展開）</summary>
+<ul>
+<li><code>Actor.h</code> / <code>.cpp</code></li>
+<li><code>ActorStateMachine.h</code> / <code>.cpp</code></li>
+<li><code>ActorStatus.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 Core</summary>
+<ul>
+<li><code>IMasterParameter.h</code> / <code>.cpp</code></li>
+<li><code>ParameterManager.h</code> / <code>.cpp</code></li>
+<li><code>StateMachineBase.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 Character</summary>
+<ul>
+<li><code>CharacterBase.h</code> / <code>.cpp</code></li>
+<li><code>CharacterParameter.h</code> / <code>.cpp</code></li>
+<li><code>CharacterStateMachine.h</code> / <code>.cpp</code></li>
+<li><code>CharacterStatus.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 Penguin</summary>
+<ul>
+<li><code>PenguinAnimationData.h</code> / <code>.cpp</code></li>
+<li><code>PenguinBase.h</code> / <code>.cpp</code></li>
+<li><code>PenguinIState.h</code> / <code>.cpp</code></li>
+<li><code>PenguinParameter.h</code> / <code>.cpp</code></li>
+<li><code>PenguinStateMachine.h</code> / <code>.cpp</code></li>
+<li><code>PenguinStatus.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 ChildPenguin</summary>
+<ul>
+<li><code>ChildPenguin.h</code> / <code>.cpp</code></li>
+<li><code>ChildPenguinAIController.h</code> / <code>.cpp</code></li>
+<li><code>ChildPenguinManager.h</code> / <code>.cpp</code></li>
+<li><code>ChildPenguinParameter.h</code> / <code>.cpp</code></li>
+<li><code>ChildPenguinStateMachine.h</code> / <code>.cpp</code></li>
+<li><code>ChildPenguinStatus.h</code> / <code>.cpp</code></li>
+<li><code>ChildPenguinTypes.h</code></li>
+<li><code>ClumsyChildPenguinIState.h</code> / <code>.cpp</code></li>
+<li><code>ClumsyChildPenguinStateMachine.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 DaddyPenguin</summary>
+<ul>
+<li><code>DaddyPenguin.h</code> / <code>.cpp</code></li>
+<li><code>DaddyPenguinController.h</code> / <code>.cpp</code></li>
+<li><code>DaddyPenguinIState.h</code> / <code>.cpp</code></li>
+<li><code>DaddyPenguinParameter.h</code> / <code>.cpp</code></li>
+<li><code>DaddyPenguinStateMachine.h</code> / <code>.cpp</code></li>
+<li><code>DaddyPenguinStatus.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 Camera</summary>
+<ul>
+<li><code>CameraCommon.h</code> / <code>.cpp</code></li>
+<li><code>CameraController.h</code> / <code>.cpp</code></li>
+<li><code>CameraManager.h</code> / <code>.cpp</code></li>
+<li><code>CameraSteering.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 Stage</summary>
+<ul>
+<li><code>IStage.h</code> / <code>.cpp</code></li>
+<li><code>StageSystem.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 CPReaction</summary>
+<ul>
+<li><code>CPReactionAnimStatus.h</code> / <code>.cpp</code></li>
+<li><code>CPReactionMenu.h</code> / <code>.cpp</code></li>
+<li><code>CPReactionSystem.h</code> / <code>.cpp</code></li>
+<li><code>CPReactionStatus.h</code> / <code>.cpp</code></li>
+<li><code>MasterCPReactionParameter.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 InGameStartingAnimLogic</summary>
+<ul>
+<li><code>InGameStartingAnimLogic.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 System</summary>
+<ul>
+<li><code>SystemPacket.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 WpWarning</summary>
+<ul>
+<li><code>MasterWpWarningParameter.h</code> / <code>.cpp</code></li>
+<li><code>WpWarningAnimStatus.h</code> / <code>.cpp</code></li>
+<li><code>WpWarningMenu.h</code> / <code>.cpp</code></li>
+<li><code>WpWarningStatus.h</code> / <code>.cpp</code></li>
+<li><code>WpWarningSystem.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<details>
+<summary>📂 Util</summary>
+<ul>
+<li><code>JsonConverter.h</code> / <code>.cpp</code></li>
+</ul>
+</details>
+<hr>
+<h2 id="技術紹介">技術紹介</h2>
+<h3 id="開発環境を極限まで高めるホットリロード基盤">開発環境を極限まで高める「ホットリロード基盤」</h3>
+<p>ゲーム内の各種数値をC++コードから分離し、ゲームを実行したままリアルタイムに変更を反映させるプランナー向けのデバッグ環境を構築しました。</p>
+<p><img src="./GIF/stageHotReload.gif" alt="ホットリロード"></p>
+<ul>
+<li><strong>JSONパースと更新監視</strong>: <code>JsonConverter</code> クラスにより読み取り処理を簡略化。ファイルの更新日時を監視し、即座に変更を反映するホットリロードを実現しました。</li>
+<li><strong>ランダム個体値の保護機構</strong>: ホットリロード時にキャラクターの個体値が初期化されるバグを防ぐため、<code>ParameterManager</code> にロックフラグを実装。デバッグの利便性とゲーム仕様を両立しました。</li>
+</ul>
+<hr>
+<h3 id="mvcアーキテクチャに基づくuiシステム">MVCアーキテクチャに基づく「UIシステム」</h3>
+<p>危険エリアへの警告（WpWarning）や、子ペンギンの感情表現（CPReaction）など、多数のUIを効率的に管理するシステムを構築しました。</p>
+<ul>
+<li><strong>コンポーネント分離による拡張性</strong>: 描画（Layout）とロジック（Menu）をセットで扱う <code>StagePacket</code> を設計。機能追加時に既存のコードを汚さないクリーンな設計を徹底しました。</li>
+<li><strong>動的生成時のメモリリーク防止</strong>: 頻繁に生成・破棄されるUIレイアウトのポインタを <code>m_layouts</code> コンテナで一元管理し、長時間のプレイでも安全な設計にしています。</li>
+</ul>
+<p><img src="./PNG/SystemPacket.png" alt="システムパケット図解"></p>
+<hr>
+<h3 id="拡張性とパフォーマンスを両立したステートマシン">拡張性とパフォーマンスを両立した「ステートマシン」</h3>
+<p>100羽の群衆AIを安定して制御するため、ポリモーフィズム（多態性）を活用した状態遷移システムを構築しました。</p>
+<ul>
+<li><strong>Template MethodパターンによるAI連携</strong>: 各性格の固有アクションを仮想関数で分離。「おっちょこちょいが転倒」→「世話焼きが検知して救助」という、マネージャーを介した疎結合な連携を実現しました。</li>
+<li><strong>複雑なギミックの回転制御</strong>: 「渦潮」ギミックにおいて、ステートマシン内で拡大・縮小の両方のフェーズ中に適切な回転処理（Rotation）を継続させ、破綻のない挙動を担保しています。</li>
+</ul>
+<p><img src="./PNG/stateMachine.png" alt="ステートマシン"></p>
+<ul>
+<li><strong>なぜステートマシンを実装したのか</strong>:
+アクションゲームでは開発の進行に伴い新しい状態が次々と追加されます。ステートマシンを用いて状態ごとにクラスを独立させることで、既存のコードに影響を与えずに新機能を素早く追加できる「高い拡張性」と、パラメーター調整時に該当クラスだけを見れば済む「高い保守性」を確保し、開発のイテレーション（反復）速度を向上させました。</li>
+</ul>
+<hr>
+<h3 id="3d数学を用いた物理挙動と地形追従制御">3D数学を用いた「物理挙動と地形追従制御」</h3>
+<p>可変フレームレート環境下での動作安定性と、群衆AIを処理落ちさせないための最適化を追求しました。</p>
+<p><img src="./GIF/sliding.gif" alt="坂移動"></p>
+<ul>
+<li><strong>計算負荷を極小化する <code>LengthSq()</code></strong>: 100羽のペンギンの距離計算やゼロ判定において、重い平方根計算を排除し「距離の二乗」で比較処理を徹底。致命的な処理落ちを防ぎました。</li>
+<li><strong>クォータニオンとSlerpを用いた地形追従</strong>: 斜面を滑る際、物理計算はそのままに「描画姿勢のみ」を地形法線に合わせて回転。<code>Quaternion::Multiply</code> と <code>Slerp</code> を使い、滑らかに吸い付くビジュアルを実現しました。</li>
+</ul>
+<hr>
+<h3 id="最大100羽を制御する同心円陣形とソート処理">最大100羽を制御する「同心円陣形とソート処理」</h3>
+<p>親ペンギンに追従する子ペンギンの隊列において、数学とアルゴリズムを用いて整然とした美しい陣形を構築しました。</p>
+<p><img src="./GIF/formation.gif" alt="同心円配置"></p>
+<ul>
+<li><strong>三角関数を用いた同心円配置</strong>: 階層ごとの半径と円周を計算し、<code>sin</code> と <code>cos</code> を用いて重なり合わない綺麗な同心円状の目標座標（最大100個）を動的に生成しています。</li>
+<li><strong><code>std::stable_sort</code> を活用した優先配置</strong>: 「甘えん坊タイプは内側に配置する」という要件に対し、他のペンギンの「隊列参加順」を崩さない安定ソートを採用し、自然な隊列形成を実現しました。</li>
+</ul>
+<hr>
+<h3 id="aiの振動を防ぐヒステリシス移動制御">AIの振動を防ぐ「ヒステリシス移動制御」</h3>
+<p>AIが目標地点へ向かう際、「滑り・走り・歩き・停止」を距離に応じて自動かつ自然に切り替える移動システムを実装しました。</p>
+<ul>
+<li><strong>ヒステリシスによるチャタリング防止</strong>: 状態が切り替わる境界で「走る」と「歩く」を繰り返す不自然な振動を防ぐため、切り替え閾値に遊び（バッファ）を設け、挙動を劇的に安定させました。</li>
+<li><strong>距離に応じたシームレスなブレーキ</strong>: 目標地点での急停止を防ぐため、停止距離の2倍の範囲内に入ると、距離に比例して速度倍率（<code>speedMultiplier</code>）を滑らかに減衰させるブレーキロジックを組み込んでいます。</li>
+</ul>
+<hr>
+<h3 id="マネージャーを介したイベントのオーケストレーション">マネージャーを介した「イベントのオーケストレーション」</h3>
+<p>「親がかまくらに入ると、子も呼ばれて中に入る」という複雑な連携を、クラスの結合度を下げる（疎結合）設計で実現しました。</p>
+<ul>
+<li><strong>役割を分担したイベント発火</strong>: 親はマネージャーへ「入り口の座標」のみを伝達。報告を受けたマネージャーが条件を満たす子ペンギンを抽出し、AIにイベントフラグを立てます。</li>
+<li><strong>AIの自律的なイベント解決</strong>: フラグを受けたAIは通常の追従を中断して自律的に入り口へ移動。極座標計算を用いてかまくら内部のランダムな座標へ自身をワープさせるなど、保守性の高いイベント駆動を実装しました。</li>
+</ul>
+<hr>
+<h3 id="3d数学を用いたカメラワークとブレンド制御">3D数学を用いた「カメラワークとブレンド制御」</h3>
+<p>プレイヤーの操作性や臨場感を高めるため、複数のカメラ状態を滑らかに補間する管理システムと、3D数学を駆使した自律的な周回カメラを構築しました。</p>
+<ul>
+<li><strong><code>Lerp</code> を用いたシームレスなカメラ遷移</strong>: 複数のカメラコントローラーをマネージャーで一元管理。切り替え時に <code>CameraData::Lerp</code> による線形補間を施し、指定時間で滑らかにブレンドする遷移基盤を実装しました。</li>
+<li><strong>外積と三平方の定理による角度制限</strong>: 右スティックによる旋回制御において、外積から正確な右方向ベクトルを算出して回転。上下の角度制限（クランプ）時には、三平方の定理を用いてXZ平面の長さを逆算・補正することで、ターゲットとの距離を完全に一定に保つ堅牢な数学処理を実装しました。</li>
+</ul>
+
+</body>
+</html>
