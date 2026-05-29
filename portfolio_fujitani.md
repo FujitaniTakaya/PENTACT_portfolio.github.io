@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="./style.css">
+
 # ゲームプログラマー ポートフォリオ（システム・UI・AI基盤）
 
 ---

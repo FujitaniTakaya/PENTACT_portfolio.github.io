@@ -1,0 +1,165 @@
+/* * ぺんたくと風 ポートフォリオ用CSS
+ * テーマ：氷、雪、クリアウォーター、UIのポップさ
+ */
+
+/* =========================================
+   ベース設定
+   ========================================= */
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #2c3e50; /* 濃いグレーで可読性を確保 */
+    background-color: #f4fafd; /* うっすらとした雪のようなアイスブルー */
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* リンク */
+a {
+    color: #00838f; /* 深みのある水色 */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #00bcd4; /* ホバー時は明るいシアンに発光するイメージ */
+    text-decoration: underline;
+}
+
+/* =========================================
+   見出し (Headings)
+   ========================================= */
+h1 {
+    color: #005662;
+    text-align: center;
+    font-size: 2.2em;
+    padding-bottom: 15px;
+    border-bottom: 4px dashed #80deea; /* 氷の轍のようなダッシュ線 */
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #004d40;
+    font-size: 1.6em;
+    padding: 12px 15px;
+    /* 左に太い氷柱のようなライン、背景は水面のようなグラデーション */
+    background: linear-gradient(90deg, #e0f7fa 0%, transparent 100%);
+    border-left: 6px solid #00acc1;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+h3 {
+    color: #007c91;
+    font-size: 1.3em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #b2ebf2;
+    margin-top: 35px;
+}
+
+/* =========================================
+   テーブル (Tables)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff; /* 雪のような白 */
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.05); /* うっすらとした青い影 */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+th {
+    background-color: #4dd0e1; /* UIの水色をイメージ */
+    color: #ffffff;
+    font-weight: bold;
+    padding: 12px 15px;
+    border-right: 1px solid #26c6da;
+    white-space: nowrap;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0f2f1;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================
+   折りたたみメニュー (Details / Summary)
+   ========================================= */
+details {
+    background-color: #ffffff;
+    border: 1px solid #b2ebf2;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.15); /* 開いた時は少し影を濃く */
+    border-color: #4dd0e1;
+}
+
+summary {
+    padding: 12px 15px;
+    font-weight: bold;
+    color: #00838f;
+    cursor: pointer;
+    list-style: none; /* デフォルトの三角形を消す（モダンブラウザ向け） */
+    display: flex;
+    align-items: center;
+}
+
+summary::-webkit-details-marker {
+    display: none; /* Safari向けの三角形消去 */
+}
+
+/* 独自のアイコン（氷の結晶や雪玉をイメージ）を疑似要素で追加 */
+summary::before {
+    content: "⛄"; /* お好みで ❄️ や 🧊 に変更可能 */
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+details[open] summary::before {
+    content: "🐧"; /* 開くとペンギンになる遊び心 */
+}
+
+details ul {
+    margin: 0;
+    padding: 10px 20px 20px 40px;
+}
+
+details li {
+    padding: 4px 0;
+    color: #455a64;
+}
+
+/* =========================================
+   その他要素 (水平線、画像など)
+   ========================================= */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #80deea, transparent);
+    margin: 40px 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    margin: 15px 0;
+}
